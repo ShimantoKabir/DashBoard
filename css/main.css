@@ -52,15 +52,37 @@ body{
 .side_nav_sub_menu_list{
     display: flex;
     flex-direction: column;
+    background-color: #24292E;
 }
 .side_nav_sub_menu_list a{
     color: lightgray;
     text-decoration: none;
     padding: 5px 0px 5px 22px;
-    border-bottom: 1px solid #20252a;
+    border-bottom: 1px solid #353d45;
+}
+.side_nav_sub_menu_list a:hover{
+    color: gray;
 }
 .side_nav_sub_menu_list a i{
     font-size: 10px;
+}
+/*rotate side nav head icon*/
+[id*="rotate"]{
+    -moz-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+.down{
+    -ms-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.up{
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
 }
 /*===================*/
 /*   main container  */

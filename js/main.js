@@ -17,7 +17,7 @@ $(document).ready(function () {
                     "            <h6>"+response.sideNavMenu[i].menuName+"</h6>\n" +
                     "        </div>\n" +
                     "        <div class='side_nav_menu_head_rotate_icon' >\n" +
-                    "            <i class='fas fa-angle-down'></i>\n" +
+                    "            <i id='rotate"+i+"' class='fas fa-angle-down'></i>\n" +
                     "        </div>\n" +
                     "    </div>\n" +
                     "    <div id='side_nav_sub_menu_list"+i+"' class='side_nav_sub_menu_list' >");
@@ -35,13 +35,21 @@ $(document).ready(function () {
                     "</div>");
             }
 
+            // show and hide side menu ....
             $(".side_nav_sub_menu_list").hide();
 
-            $(".side_nav_menu_div").click(function (event) {
+            $(".side_nav_menu_div").click(function () {
 
                 var selected_side_nav_menu_div_id = this.id;
+
                 var lastChar = selected_side_nav_menu_div_id.charAt(selected_side_nav_menu_div_id.length - 1);
+
+                // hide and show sub menu list ....
                 $("#side_nav_sub_menu_list"+lastChar+"").toggle("slow");
+
+                // rotate the icon ....
+                $("#rotate"+lastChar+"").toggleClass("down");
+
                 hideUnActiveSubMenuList(lastChar);
 
             });
@@ -54,17 +62,10 @@ $(document).ready(function () {
                 }
             }
 
-
-
         },
         error:function (response) {
             alert("ERROR -> " + response);
         }
     });
-
-});
-
-// show and hide side menu ....
-$(document).ready(function () {
 
 });
